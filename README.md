@@ -10,3 +10,8 @@ The user/password are : admin/admin
 - We connect to the Broker using : tcp://localhost:61616
 - Run the Projet you will see that a message was sent and then recieved by ActiveMQ
 
+-- Run the project with Maven Docker Image
+
+sudo docker run -it --rm --name demo --network=host -v "$(pwd)":/usr/src/jms-docker -v "$HOME/.m2":/root/.m2 -w /usr/src/jms-docker maven:3.6.2-jdk-8 mvn clean compile assembly:single
+
+
