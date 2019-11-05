@@ -14,4 +14,9 @@ The user/password are : admin/admin
 
 sudo docker run -it --rm --name demo --network=host -v "$(pwd)":/usr/src/jms-docker -v "$HOME/.m2":/root/.m2 -w /usr/src/jms-docker maven:3.6.2-jdk-8 mvn clean compile assembly:single
 
+-- Run the project with openjdk Image
+
+execute first : mvn clean compile assembly:single on the project then execute :
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp --network host openjdk:8 java -jar target/demo-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
 
